@@ -1,0 +1,17 @@
+# Level 0 -> Level 1
+
+
+# Objective:
+- Tells us the password to the next level is bandit0 
+- tells use to connect using port 2220
+- username for this level is bandit0
+
+
+# breakdown: 
+ We use the ssh command and port to connect to the server 
+
+
+# Command:
+ssh -p 2220 bandit0@bandit.labs.overthewire.org
+- prompts a password (bandit0)
+
