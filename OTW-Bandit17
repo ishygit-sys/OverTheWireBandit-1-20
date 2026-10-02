@@ -1,0 +1,10 @@
+# Level 17 -> Level 18
+
+# Objective:
+Retrieve the password for bandit18 stored in passwords.new, which is the only line changed between passwords.old and passwords.new
+
+# breakdown:
+The diff command compares two text files line-by-line and highlights the differences between them. Lines preceded by < represent text from the first file (passwords.old), while lines preceded by > represent new text from the second file (passwords.new). The line marked with > contains the password for bandit18.
+
+Command:
+diff passwords.old passwords.new

@@ -1,0 +1,15 @@
+# Level 3 -> Level 4
+
+# Objective:
+Retrieve the password for bandit4 stored in a hidden file inside the inhere directory
+
+
+# breakdown:
+In Linux, hidden files begin with a dot (.) and are not shown by standard ls output. 
+ Navigating into the inhere directory with cd and using ls -a reveals hidden files, allowing you to read the hidden file using cat.
+
+
+# Command:
+cd inhere
+ls -a
+cat .hidden

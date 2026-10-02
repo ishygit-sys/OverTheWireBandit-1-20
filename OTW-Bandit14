@@ -1,0 +1,12 @@
+# Level 14 -> Level 15
+
+# Objective:
+Retrieve the password for bandit15 by submitting the password of bandit14 to port 30000 on localhost.
+
+# breakdown:
+
+The current level's password stored at /etc/bandit_pass/bandit14 must be sent over an unencrypted TCP connection to port 30000 on localhost. Piping the file content from cat directly into nc (Netcat) transmits the password to the listening service, which responds with the password for bandit15.
+
+# Command:
+
+cat /etc/bandit_pass/bandit14 | nc localhost 30000

@@ -1,0 +1,23 @@
+# Level 16 -> Level 17
+
+# Objective:
+Scan ports in the range 31000-32000 on localhost to locate open services and identify which speak SSL/TLS.
+
+Submit the current bandit16 password to the target SSL/TLS server port to retrieve the RSA private key for bandit17.
+
+Save the private key to a file on your local machine, restrict its file permissions, and log in to bandit17 via SSH.
+
+# breakdown:
+Use nmap -Pn -T4 -sV -p 31000-32000 localhost to quickly discover open ports and determine which ones run SSL/TLS services. Pipe the current password into openssl s_client -quiet -connect localhost:<port> to query the target SSL port (port 31790) that outputs an RSA private key instead of echoing text back. Copy the private key block, save it into a file named bandit17.key on your local machine, set permissions using chmod 600 bandit17.key, and authenticate using ssh -i.
+
+# Command:
+
+#  1. Scan the port range to locate open SSL/TLS services:
+nmap -Pn -T4 -sV -p 31000-32000 localhost
+
+# 2. Submit the bandit16 password to the active SSL/TLS port (port 31790):
+cat /etc/bandit_pass/bandit16 | openssl s_client -quiet -connect localhost:31790
+
+# 3. Run on your local machine after saving the private key content into bandit17.key:
+chmod 600 bandit17.key
+ssh -i bandit17.key bandit17@bandit.labs.overthewire.org -p 2220

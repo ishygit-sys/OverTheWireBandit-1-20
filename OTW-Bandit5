@@ -1,0 +1,15 @@
+# Level 5 -> Level 6
+
+# Objective:
+Retrieve the password for bandit6 stored in a file under the inhere directory that is human-readable, 1033 bytes in size, and non-executable
+
+# breakdown:
+The inhere directory contains numerous nested subdirectories and files.
+ Using the find command allows you to filter search criteria simultaneously: -type f limits results to regular files, -size 1033c matches the exact size of 1033 bytes, and ! -executable filters out executable files.
+
+ Once located, read the file using cat.
+
+Command:
+cd inhere
+find . -type f -size 1033c ! -executable
+cat ./maybehere07/.file2

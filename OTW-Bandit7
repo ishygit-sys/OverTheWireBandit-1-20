@@ -1,0 +1,12 @@
+# Level 7 -> Level 8
+
+# Objective:
+Retrieve the password for bandit8 stored in data.txt next to the word millionth
+
+# breakdown:
+The grep command searches files for a specific text pattern and outputs matching lines.
+ Running grep "millionth" data.txt scans data.txt and isolates the line containing the keyword millionth, displaying the password right beside it.
+
+# Command:
+
+grep "millionth" data.txt

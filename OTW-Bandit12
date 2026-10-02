@@ -1,0 +1,15 @@
+# Level 12 -> Level 13
+
+# Objective:
+Retrieve the password for bandit13 stored in data.txt, which is a hexdump of a repeatedly compressed file
+
+# breakdown:
+Create a private working directory in /tmp using mktemp -d and copy data.txt into it. Convert the text-based hexdump back into raw binary format using xxd -r. Then, perform a decompression loop: inspect the file header using file, rename the file with mv to append the appropriate extension (.gz, .bz2, or .tar), and decompress it using its matching tool (gzip -d, bzip2 -d, or tar -xvf). Repeat this inspect-rename-decompress process until file reports ASCII text, then read it with cat.
+
+# Command:
+cd $(mktemp -d)
+cp ~/data.txt .
+xxd -r data.txt > file1
+file file1
+# Repeat: check type with `file` -> rename with `mv` -> decompress (`gzip -d`, `bzip2 -d`, or `tar -xvf`)
+cat final_text_file

@@ -1,0 +1,14 @@
+# Level 4 -> Level 5
+
+
+# Objective:
+Retrieve the password for bandit5 stored in the only human-readable file inside the inhere directory
+
+breakdown:
+The inhere directory contains multiple files, most of which consist of raw binary data.
+ Running file ./* inspects the file header of every file in the directory simultaneously to locate the single human-readable file (marked as ASCII text), which can then be read using cat.
+
+Command:
+cd inhere
+file ./*
+cat ./-file07

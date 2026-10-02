@@ -1,0 +1,13 @@
+# Level 11 -> Level 12
+
+# Objective:
+Retrieve the password for bandit12 stored in data.txt, where all lowercase and uppercase letters have been rotated by 13 positions (ROT13)
+
+# breakdown:
+
+ROT13 is a substitution cipher that shifts every letter 13 positions forward in the alphabet.
+ The tr command translates characters reading from standard input by matching a source character set to a target character set.
+ Piping data.txt into tr with 'A-Za-z' mapped to 'N-ZA-Mn-za-m' rotates both uppercase and lowercase letters 13 places back to reveal the decrypted password.
+
+# Command:
+cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'

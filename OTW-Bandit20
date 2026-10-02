@@ -1,0 +1,11 @@
+# Level 20 -> Level 21
+
+# Objective:
+Submit the password for bandit20 to the SetUID binary via a local network port to retrieve the password for bandit21.
+
+# breakdown:
+The SetUID binary (./suconnect) connects to a specified port on localhost and expects the bandit20 password sent over the connection. Running nc -l -p 12345 sets up a Netcat listener on port 12345, and redirecting < /etc/bandit_pass/bandit20 automatically feeds the current level's password into the stream. Appending & sends the listener to the background, returning prompt control so you can execute ./suconnect 12345. The binary connects to your background listener, verifies the password, and outputs the password for bandit21.
+
+# Command:
+nc -l -p 12345 < /etc/bandit_pass/bandit20 &
+./suconnect 12345

@@ -1,0 +1,14 @@
+# Level 1 -> Level 2
+
+
+# Objective:
+ Retrieve the password for bandit2 stored in a file named - located in the home directory
+
+Connect to the server using username bandit1 on port 2220
+
+# breakdown:
+Standard Linux commands treat a single dash - as standard input (stdin) rather than a file name.
+ To force the cat command to read the file named -  specify the explicit relative path ./-.
+
+# Command:
+ cat ./-

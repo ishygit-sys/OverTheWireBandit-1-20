@@ -1,0 +1,18 @@
+# Level 13 -> Level 14
+
+# Objective:
+Download the SSH private key (sshkey.private) from the server to your local machine.
+
+Authenticate via SSH using the private key as user bandit14 on port 2220 and read the password file stored in /etc/bandit_pass/bandit14.
+
+# breakdown:
+Run scp with the capital -P flag on your local terminal to securely transfer sshkey.private from the remote server to your local machine. Restrict the key's file permissions using chmod 600 so SSH accepts it as secure. Use ssh with the -i flag to authenticate using the local private key, connect to bandit14@bandit.labs.overthewire.org, and retrieve the password file using cat.
+
+# Command:
+# Run on your local terminal:
+scp -P 2220 bandit13@bandit.labs.overthewire.org:/home/bandit13/sshkey.private .
+chmod 600 sshkey.private
+ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
+
+# Run after logging into bandit14:
+cat /etc/bandit_pass/bandit14

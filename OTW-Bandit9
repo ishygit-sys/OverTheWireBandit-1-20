@@ -1,0 +1,11 @@
+# Level 9 -> Level 10
+
+# Objective:
+Retrieve the password for bandit10 stored in data.txt as a human-readable string preceded by several = characters.
+
+# breakdown:
+The file data.txt contains binary data mixed with printable text.
+ Running strings extracts all printable ASCII strings, and piping (|) the stream into grep -E "={2,}" filters the output to display only lines containing consecutive = characters.
+
+Command:
+strings data.txt | grep -E "={2,}"

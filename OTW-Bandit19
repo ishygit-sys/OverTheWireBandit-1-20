@@ -1,0 +1,10 @@
+# Level 19 -> Level 20
+
+# Objective:
+Retrieve the password for bandit20 stored in /etc/bandit_pass/bandit20 using the setuid binary located in the home directory
+
+# breakdown:
+The home directory contains a SetUID binary named bandit20-do owned by user bandit20. Running this binary executes any appended command with the elevated privileges of bandit20 rather than bandit19. Passing cat /etc/bandit_pass/bandit20 as an argument executes cat under bandit20's authority, granting access to the protected password file.
+
+# Command:
+./bandit20-do cat /etc/bandit_pass/bandit20

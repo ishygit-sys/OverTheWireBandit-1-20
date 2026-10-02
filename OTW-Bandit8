@@ -1,0 +1,13 @@
+# Level 8 -> Level 9
+
+# Objective:
+
+Retrieve the password for bandit9 stored in data.txt, which is the only line of text that appears exactly once
+
+# breakdown:
+
+The uniq command filters text lines, but it only compares adjacent lines.
+ Passing data.txt through sort first groups all duplicate lines together so uniq -u can successfully discard all repeated lines and output the single unique line.
+
+# Command:
+sort data.txt | uniq -u

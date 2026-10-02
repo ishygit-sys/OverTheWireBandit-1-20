@@ -1,0 +1,16 @@
+# Level 2 -> Level 3
+
+
+
+# Objective:
+Retrieve the password for bandit3 stored in a file named   --spaces in this filename--  located in the home directory
+
+Connect to the server using username bandit2 on port 2220
+
+# breakdown
+- In Linux, command options start with dashes, causing cat to interpret leading hyphens as command flags rather than a filename.
+- ./ forces cat to recognize the target as a relative file path. Wrapping the full path in quotes handles the spaces within the filename so the shell treats it as a single argument.
+
+
+# command 
+cat ./'--spaces in this filename--'

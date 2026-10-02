@@ -1,0 +1,12 @@
+# Level 15 -> Level 16
+
+# Objective:
+Retrieve the password for bandit16 by submitting the password of bandit15 to port 30001 on localhost using SSL/TLS encryption.
+
+Connect to the server using username bandit15 on port 2220.
+
+# breakdown:
+Unlike Level 14 where Netcat transmitted plain text, Level 15 requires an SSL/TLS-wrapped connection. openssl s_client establishes the secure SSL/TLS connection to localhost:30001. Adding the -quiet flag suppresses the certificate handshake chatter, and piping the current password from /etc/bandit_pass/bandit15 submits it directly across the encrypted session.
+
+# Command:
+cat /etc/bandit_pass/bandit15 | openssl s_client -quiet -connect localhost:30001

@@ -1,0 +1,10 @@
+# Level 18 -> Level 19
+
+# Objective:
+Retrieve the password for bandit19 stored in a file named readme in the home directory
+
+# breakdown:
+Logging into an interactive terminal session triggers .bashrc, which has been modified to automatically log you out upon connection. Appending a command directly to the end of the ssh invocation bypasses interactive shell startup and skips .bashrc execution entirely, running the specified command directly and returning its output.
+
+Command:
+ssh bandit18@bandit.labs.overthewire.org -p 2220 "cat readme"

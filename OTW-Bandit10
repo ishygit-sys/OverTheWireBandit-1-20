@@ -1,0 +1,11 @@
+# Level 10 -> Level 11
+
+# Objective:
+Retrieve the password for bandit11 stored in data.txt, which contains Base64 encoded data
+
+# breakdown:
+Base64 encodes binary or text data into printable ASCII format.
+ Running base64 with the -d (decode) flag reverses this process and decodes the content of data.txt back into human-readable plain text.
+
+Command:
+base64 -d data.txt
